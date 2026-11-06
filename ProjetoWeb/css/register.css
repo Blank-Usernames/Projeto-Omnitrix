@@ -38,3 +38,7 @@ form input {
 form input:focus {
     border-color: var(--text);
 }
+/* Imagem Ben 10 */ 
+.hero-image img{
+    max-width: 280px;
+}
