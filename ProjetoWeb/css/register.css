@@ -1,0 +1,92 @@
+/*fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+form h2 {
+    font-family: orbitron, sans-serif;
+    font-size: 30px;
+}
+
+.register-layout{
+    display: flex;
+    align-items: center;      /* Alinha verticalmente ao centro */
+    justify-content: center;  /* Centraliza o bloco na tela */
+    gap: 40px;                /* Espaçamento entre o formulário e a imagem */
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.register-container {
+    background: var(--surface);
+    border: 1px solid #acabab;
+    border-radius: 10px;
+    max-width: 520px;
+    padding: 45px;
+    margin: 0;
+}
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 40px 0;
+}
+
+form label {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+form input {
+    background: var(--surface-light);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+form input:focus {
+    border-color: var(--text);
+}
+/* Ajuste botão*/
+.button-forms{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Imagem Ben 10 */ 
+.hero-image{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      
+    text-align: center;       
+    max-width: 380px;
+    gap: 15px;
+    margin: 50px;
+
+}
+.hero-image span{
+    color: var(--primary);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+.hero-image p {
+    color: var(--text);
+    font-size: 16px;
+    font-family: Orbitron, sans-serif;
+    font-weight: 600;
+}
