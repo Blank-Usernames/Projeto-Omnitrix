@@ -1,0 +1,326 @@
+/* COLLECTION */
+
+.collection-container {
+    padding: 40px 8%;
+    max-width: 100%;
+}
+
+/* TÍTULO */
+.title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+.title-image {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.title-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.title-text h1 {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+.title-text p {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* CONTEÚDO DA COLEÇÃO */
+.collection-content {
+    display: flex;
+    background: var(--surface-light);
+    border: 1px solid #acabab;
+    border-radius: 10px;
+    gap: 20px;
+    padding: 15px;
+    margin: 30px 0;
+}
+
+/* CARDS */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    flex: 1;
+}
+
+.alien-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+    background: #08130a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 170px;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+/* CARDS BLOQUEADOS */
+.alien-card.locked {
+    background: #19201b;
+}
+
+.alien-card.locked::after {
+    color: var(--text-muted);
+    content: "DESCONHECIDO";
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+}
+
+/* ALIENS DESCOBERTOS */
+.alien-card.unlocked {
+    border-color: var(--primary-dark);
+}
+
+.alien-card.unlocked:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px #17d637;
+}
+
+/* ALIEN CARD */
+.alien-card img {
+    width: 100%;
+    height: 115px;
+    object-fit: contain;
+}
+
+.alien-card span {
+    color: var(--text);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* INFO CARD */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    gap: 15px;
+    padding: 12px;    
+}
+
+.info-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    height: 140px;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info-container p {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.info-image+p {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+/* ESTATÍSTICAS E LABORATÓRIO */
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* ESTATÍSTICAS */
+.player-stats {
+   width: 50%;
+}
+
+.player-stats h2 {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 17px;
+    font-weight: lighter;
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    min-height: 65px;
+    width: 100%;
+    padding: 10px;
+    transition: ease-in-out 0.3s;   
+}
+
+.stat:hover {
+   box-shadow: 0 0 15px #17d637;
+   transform: translateY(-3px);
+}
+
+.stat-num {
+    color: var(--primary-dark);
+}
+
+/* CHAMADA PARA LABORATÓRIO */
+.section-laboratory {
+    width: 50%;
+    text-align: right;
+}
+
+.section-laboratory p {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.section-laboratory h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.section-laboratory h2>span {
+    color: var(--primary
+    );
+}
+
+.section-laboratory a {
+    display: inline-block;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .collection-container {
+        padding: 25px 5%;
+    }
+
+    .title {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .title-image {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .title-text h1 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .title-text p {
+        font-size: 10px;
+    }
+
+    .collection-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alien-card {
+        min-height: 145px;
+        padding: 8px;
+    }
+
+    .alien-card img {
+        height: 100px;
+    }
+
+    .alien-card.locked::after {
+        font-size: 9px;
+    }
+
+    .info-container {
+        width: 100%;
+    }
+
+    .info-image {
+        max-width: 200px;
+    }
+
+    .player-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .player-stats {
+        width: 100%;
+    }
+
+    .player-stats h2 {
+        font-size: 15px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat {
+        min-height: 55px;
+    }
+
+    .section-laboratory {
+        width: 100%;
+        text-align: left;
+    }
+
+    .section-laboratory h2 {
+        font-size: 16px;
+    }
+
+}
