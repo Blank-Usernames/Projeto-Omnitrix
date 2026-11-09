@@ -1,4 +1,4 @@
-import { getData, saveData } from "./storage.js";
+import { getData, saveData, removeData } from "./storage.js";
 
 /* CADASTRO */
 export function cadastro(username, email, password, confirmPassword) {
@@ -118,10 +118,12 @@ export function login(username, password) {
     };
 }
 
-export function logout() {
-
+// Recuperar o usuário logado
+export function getCurrentUser() {
+    return getData("omnitrix_current_user");
 }
 
-export function getCurrentUser() {
-
+export function logout() {
+    removeData("omnitrix_current_user");
+    window.location.href = "index.html";
 }
