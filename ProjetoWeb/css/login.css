@@ -23,6 +23,11 @@ main h1 span {
     color: var(--primary);
 }
 
+h1+p {
+   text-align: center;
+   margin-top: 20px;
+}
+
 /* FORMULÁRIO */
 form {
     display: flex;
