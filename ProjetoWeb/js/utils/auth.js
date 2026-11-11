@@ -1,4 +1,4 @@
-import { getData, saveData } from "./storage.js";
+import { getData, saveData, removeData } from "./storage.js";
 
 /* CADASTRO */
 export function cadastro(username, email, password, confirmPassword) {
@@ -19,6 +19,14 @@ export function cadastro(username, email, password, confirmPassword) {
         return {
             success: false,
             message: "E-mail já cadastrado."
+        };
+    }
+
+    // Verificar campos vazios
+    if (!username || !email || !password || !confirmPassword) {
+        return {
+            success: false,
+            message: "Preencha todos os campos."
         };
     }
 
@@ -60,14 +68,62 @@ export function cadastro(username, email, password, confirmPassword) {
     };
 }
 
-export function login() {
+export function login(username, password) {
 
+    // Recuperar usuários cadastrados
+    const users = getData("omnitrix_users") || [];
+
+    // Remover espaços desnecessários
+    username = username.trim();
+
+    // Verificar campos vazios
+    if (!username || !password) {
+        return {
+            success: false,
+            message: "Preencha todos os campos."
+        };
+    }
+
+    // Procurar usuário pelo nome
+    const user = users.find(user =>
+        user.username.toLowerCase() === username.toLowerCase()
+    );
+
+    // Verificar se usuário existe
+    if (!user) {
+        return {
+            success: false,
+            message: "Nome de usuário não existe."
+        };
+    }
+
+    // Verificar se a senha corresponde
+    if (user.password !== password) {
+        return {
+            success: false,
+            message: "Senha incorreta."
+        };
+    }
+
+    // Registrar usuário logado
+    saveData("omnitrix_current_user", {
+        id: user.id,
+        username: user.username
+    });
+
+    // Retornar sucesso
+    return {
+        success: true,
+        message: "Login efetuado com sucesso!"
+    };
+}
+
+// Recuperar o usuário logado
+export function getCurrentUser() {
+    return getData("omnitrix_current_user");
 }
 
 export function logout() {
-
-}
-
-export function getCurrentUser() {
-
+    removeData("omnitrix_current_user");
+    window.location.href = "index.html";
 }

@@ -30,6 +30,7 @@
 
 /* TÍTULO */
 .register-container form h1 {
+    text-align: center;
     font-family: 'Orbitron', sans-serif;
     font-size: 30px;
     margin-bottom: 20px;

@@ -17,8 +17,7 @@
         <a href="index.html" class="logo"><img class="logo-icon" src="assets/images/icons/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="wiki.html">Wiki</a>
+            <a href="index.html" data-auth-only>Home</a>
             <a href="roulette.html" data-auth-only>Roleta</a>
             <a href="collection.html" data-auth-only>Coleção</a>
             <a href="laboratory.html" data-auth-only>Laboratório</a>
@@ -26,6 +25,7 @@
         <div class="nav-auth">
             <a href="login.html" data-guest-only>Login</a>
             <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="#" id="logout-link" data-auth-only>Logout</a>
         </div>
     </header>
 
@@ -44,6 +44,7 @@
                 
                 <label for="senha-usuario">Senha:</label>
                 <input type="password" name="senha-usuario" id="senha-usuario">
+                
 
                 <label for="confirmar-senha">Confirme a Senha:</label>
                 <input type="password" name="confirmar-senha" id="confirmar-senha">
