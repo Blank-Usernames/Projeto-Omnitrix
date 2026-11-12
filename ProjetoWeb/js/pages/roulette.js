@@ -1,84 +1,167 @@
-// ELEMENTOS DA PÁGINA
-const palco = document.getElementById('palco-omnitrix');
-const imgVisor = document.getElementById('img-visor');
-const botao = document.getElementById('botao-girar');
-const resultado = document.getElementById('resultado-roleta');
-
-const imgResultado = document.getElementById('img-resultado');
-const tagResultado = document.getElementById('tag-resultado');
-const nomeResultado = document.getElementById('nome-resultado');
-const raridadeResultado = document.getElementById('raridade-resultado');
-const mensagemResultado = document.getElementById('mensagem-resultado');
-
-// ALIENS
-const PASTA = 'assets/images/icons/';
-
-// nome = como aparece no site | arquivo = nome do arquivo na pasta
-const aliens = [
-    { nome: 'Aquático',       arquivo: 'icones_aliens_Aquatico.png',      raridade: 'Comum' },
-    { nome: 'Besta',          arquivo: 'icones_aliens_Besta.png',         raridade: 'Comum' },
-    { nome: 'Chama',          arquivo: 'icones_aliens_Chama.png',         raridade: 'Comum' },
-    { nome: 'Diamante',       arquivo: 'icones_aliens_Diamante.png',      raridade: 'Raro' },
-    { nome: 'Insectoide',     arquivo: 'icones_aliens_Insectoide.png',    raridade: 'Comum' },
-    { nome: 'Massa Cinzenta', arquivo: 'icones_aliens_MassaCinzenta.png', raridade: 'Raro' },
-    { nome: 'Quatro Braços',  arquivo: 'icones_aliens_QuatroBracos.png',  raridade: 'Comum' },
-    { nome: 'Ultra T',        arquivo: 'icones_aliens_UltraT.png',        raridade: 'Épico' },
-    { nome: 'XLR8',           arquivo: 'icones_aliens_XLR8.png',          raridade: 'Raro' },
-].map((alien) => ({ ...alien, imagem: PASTA + alien.arquivo }));
-
-// FUNÇÕES AUXILIARES
-const esperar = (ms) => new Promise((resolver) => setTimeout(resolver, ms));
-const alienAleatorio = () => aliens[Math.floor(Math.random() * aliens.length)];
-
-// remove acentos e deixa minúsculo: "Épico" vira "epico"
-const normalizar = (texto) =>
-    texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-// pré-carrega os ícones para não piscar durante o giro
-aliens.forEach((alien) => { new Image().src = alien.imagem; });
-
-// GIRAR
-botao.addEventListener('click', async () => {
-    botao.disabled = true;
-    resultado.hidden = true;
-    palco.classList.remove('sorteado');
-    palco.classList.add('girando');
-    imgVisor.hidden = false;
-
-    const escolhido = alienAleatorio(); // sorteia antes da animação
-
-    // 25 trocas a cada 100 ms (≈ 2,5 segundos)
-    let anterior = null;
-    for (let i = 0; i < 25; i++) {
-        let alien = alienAleatorio();
-        while (alien === anterior) alien = alienAleatorio(); // evita repetir em sequência
-        anterior = alien;
-        imgVisor.src = alien.imagem;
-        await esperar(100);
-    }
-
-    // alien final
-    imgVisor.src = escolhido.imagem;
-    palco.classList.remove('girando');
-    palco.classList.add('sorteado');
-
-    // resultado
-    imgResultado.src = escolhido.imagem;
-    tagResultado.textContent = 'ALIEN DESBLOQUEADO';
-    nomeResultado.textContent = escolhido.nome;
-    raridadeResultado.textContent = escolhido.raridade;
-    raridadeResultado.className = 'raridade-' + normalizar(escolhido.raridade);
-    mensagemResultado.textContent = `O Omnitrix escolheu ${escolhido.nome}!`;
-    resultado.hidden = false;
-    resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    botao.disabled = false;
-});
+import { aliens } from "../data/alien.js";
+import { getData, saveData } from "../utils/storage.js";
 import { getCurrentUser } from "../utils/auth.js";
 
+// Recuperar usuário ativo e registro de usuários
 const currentUser = getCurrentUser();
+const users = getData("omnitrix_users") || [];
 
 // Verificar se existe usuário autenticado
 if (!currentUser) {
     window.location.href = "login.html";
+}
+
+/* ELEMENTOS DA ROLETA */
+const button = document.getElementById("botao-girar");
+const resultSection = document.getElementById("resultado-roleta");
+const resultImage = document.getElementById("img-resultado");
+const resultName = document.getElementById("nome-resultado");
+const resultRarity = document.getElementById("raridade-resultado");
+const resultTag = document.getElementById("tag-resultado");
+const resultMessage = document.getElementById("mensagem-resultado");
+const totalRolls = document.getElementById("total-giros");
+
+
+/* SORTEAR ALIEN */
+export function sortearAlien() {
+
+    const numero = Math.random() * 100;
+
+    // Determinar raridade
+    let raridade;
+    if (numero < 50) {
+        raridade = "COMUM";
+    } else if (numero < 80) {
+        raridade = "INCOMUM";
+    } else if (numero < 95) {
+        raridade = "RARO";
+    } else {
+        raridade = "LENDÁRIO";
+    }
+
+    // Filtrar aliens pela raridade sorteada
+    const aliensDisponiveis = aliens.filter(alien =>
+        alien.rarity === raridade
+    );
+
+    // Sortear um alien da categoria
+    const indice = Math.floor(Math.random() * aliensDisponiveis.length);
+
+    return aliensDisponiveis[indice];
+}
+
+/* REGISTRAR ALIEN OBTIDO */
+function registrarObtencao(alien) {
+
+    // Encontrar usuário correspondente
+    const user = users.find(user => user.id === currentUser.id);
+
+    // Incrementar quantidade de giros
+    user.stats.totalRolls++;
+
+    // Procurar alien na coleção
+    const alienExistente = user.discoveredAliens.find(item =>
+        item.id === alien.id
+    );
+
+    // Verificar se é uma duplicata
+    if (alienExistente) {
+        alienExistente.quantity++;
+    } else {
+        // Adicionar novo alien
+        user.discoveredAliens.push({
+            id: alien.id,
+            quantity: 1
+        });
+
+        // Atualizar quantidade de descobertas
+        user.stats.totalDiscovered++;
+    }
+
+    // Salvar alterações
+    saveData("omnitrix_users", users);
+
+    return {
+        isNew: !alienExistente,
+        quantity: alienExistente ? alienExistente.quantity : 1
+    };
+}
+
+/* EVENTO DE GIRO */
+button.addEventListener("click", () => {
+
+    // Sortear alien
+    const alien = sortearAlien();
+    animarRoleta(alien);
+
+    // Atualização do card realizada ao mesmo tempo da animação
+    let intervalo = setTimeout(() => {
+        // Atualizar imagem
+        resultImage.src = alien.image;
+        resultImage.alt = alien.name;
+
+        // Atualizar informações
+        resultName.textContent = alien.name;
+        resultRarity.textContent = alien.rarity;
+
+        // Trocar cor do texto de acordo com a raridade
+        if (alien.rarity === "INCOMUM") {
+            resultRarity.style.color = "#4da6ff";
+        } else if (alien.rarity === "RARO") {
+            resultRarity.style.color = "#884dff";
+        } else if (alien.rarity === "LENDÁRIO") {
+            resultRarity.style.color = "#ea6010";
+        }
+    }, 2500)
+
+    // Registrar obtenção
+    const resultado = registrarObtencao(alien);
+
+    // Verificar se é uma nova descoberta
+    if (resultado.isNew) {
+
+        resultTag.textContent = "NOVO ALIEN!";
+        resultMessage.textContent = "Você descobriu um novo alienígena!";
+
+    } else {
+        resultTag.textContent = "DUPLICATA!";
+        resultMessage.textContent = `Você possui ${resultado.quantity} cópias deste alien.`;
+    }
+
+    // Exibir resultado
+    resultSection.hidden = false;
+
+    // Atualizar contador
+    totalRolls.textContent = getData("omnitrix_users")
+        .find(user => user.id === getCurrentUser().id)
+        .stats.totalRolls;
+});
+
+function animarRoleta(alienSorteado) {
+    const visorImage = document.getElementById("img-visor");
+
+    // Desabilitar botão enquanto a animação estiver rodando
+    button.setAttribute('disabled','');
+
+    let intervalo = setInterval(() => {
+        // Escolhe um alien aleatório apenas para a animação
+        const indice = Math.floor(Math.random() * aliens.length);
+        const alienAleatorio = aliens[indice];
+
+        visorImage.src = alienAleatorio.image;
+        visorImage.alt = alienAleatorio.name;
+        visorImage.hidden = false;
+
+    }, 100);
+
+    setTimeout(() => {
+        clearInterval(intervalo);
+
+        // Mostra o alien que realmente foi sorteado
+        visorImage.src = alienSorteado.image;
+        visorImage.alt = alienSorteado.name;
+
+        // Habilita o botão novamente
+        button.removeAttribute('disabled');
+    }, 2500); 
 }

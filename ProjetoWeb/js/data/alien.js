@@ -4,56 +4,56 @@ export const aliens = [
     {
         id: "chama",
         name: "Chama",
-        rarity: "comum",
-        image: "assets/images/aliens/heatblast.png"
+        rarity: "COMUM",
+        image: "assets/images/aliens/icon_chama.png"
     },
 
     {
         id: "fantasmatico",
         name: "Fantasmático",
-        rarity: "comum",
-        image: "assets/images/aliens/ghostfreak.png"
+        rarity: "COMUM",
+        image: "assets/images/aliens/icon_fantasmatico.png"
     },
 
     {
         id: "besta",
         name: "Besta",
-        rarity: "comum",
-        image: "assets/images/aliens/wildmutt.png"
+        rarity: "COMUM",
+        image: "assets/images/aliens/icon_besta.png"
     },
 
     {
         id: "diamante",
         name: "Diamante",
-        rarity: "incomum",
-        image: "assets/images/aliens/diamondhead.png"
+        rarity: "INCOMUM",
+        image: "assets/images/aliens/icon_diamante.png"
     },
 
     {
         id: "contratempo",
         name: "Contra-Tempo",
-        rarity: "incomum",
-        image: "assets/images/aliens/clockwork.png"
+        rarity: "INCOMUM",
+        image: "assets/images/aliens/icon_contratempo.png"
     },
 
     {
         id: "benbugado",
         name: "Glitch Ben",
-        rarity: "raro",
-        image: "assets/images/aliens/glitch-ben.png"
+        rarity: "RARO",
+        image: "assets/images/aliens/icon_benbugado.webp"
     },
 
     {
         id: "bensupremo",
         name: "Ben Supremo",
-        rarity: "raro",
-        image: "assets/images/aliens/ultimate-ben.png"
+        rarity: "RARO",
+        image: "assets/images/aliens/icon_bensupremo.webp"
     },
 
     {
         id: "alienx",
         name: "Alien X",
-        rarity: "lendario",
-        image: "assets/images/aliens/alien-x.png"
+        rarity: "LENDÁRIO",
+        image: "assets/images/aliens/icon_alienx.webp"
     }
 ];

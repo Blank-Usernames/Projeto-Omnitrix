@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omnitrix RNG</title>
-    <link rel="shortcut icon" href="assets/images/icons/Ben_10_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/roulette.css" />
     <script type="module" src="js/app.js"></script>
@@ -14,7 +14,7 @@
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="logo"><img class="logo-icon" src="assets/images/icons/Ben_10_logo.png"
+        <a href="index.html" class="logo"><img class="logo-icon" src="assets/logo/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
             <a href="index.html" data-auth-only>Home</a>
@@ -33,7 +33,7 @@
         <section class="titulo-roleta">
             <span>OMNITRIX RNG</span>
             <h1>GIRE O <span>OMNITRIX</span></h1>
-            <p>Aperte o botão e descubra qual alien o Omnitrix escolheu para você.</p>
+            <p>APERTE O BOTÃO PARA OBTER UM NOVO ALIEN ALEATÓRIO.</p>
         </section>
 
         <!-- OMNITRIX -->
@@ -50,7 +50,7 @@
             </div>
         </section>
 
-        <button class="btn-primary" id="botao-girar" type="button">GIRAR</button>
+        <button class="btn-secondary" id="botao-girar" type="button">GIRAR</button>
 
         <!-- RESULTADO -->
         <section class="resultado-roleta" id="resultado-roleta" aria-live="polite" hidden>
@@ -65,25 +65,26 @@
         </section>
        
         <section class="estatisticas-roleta">
-            <h3>SUAS ESTATÍSTICAS</h3>
-            <p class="total-giros">Total de giros: <span>20</span></p>
+            <h2>PROBABILIDADES</h2>
+            <p>TOTAL DE GIROS: <span id="total-giros">???</span></p>
 
             <div class="lista-raridades">
-                <div class="linha-raridade raridade-comum" style="--pct: 40%">
-                    <span>Comum</span><span>8 (40%)</span>
+                <div class="linha-raridade">
+                    <span class="raridade-texto" style="color: var(--primary);">COMUM</span><span>50%</span>
                 </div>
-                <div class="linha-raridade raridade-incomum" style="--pct: 25%">
-                    <span>Incomum</span><span>5 (25%)</span>
+                <div class="raridade-comum"></div>
+                <div class="linha-raridade">
+                    <span class="raridade-texto" style="color: #4da6ff;">INCOMUM</span><span>30%</span>
                 </div>
-                <div class="linha-raridade raridade-raro" style="--pct: 20%">
-                    <span>Raro</span><span>4 (20%)</span>
+                <div class="raridade-incomum"></div>
+                <div class="linha-raridade">
+                    <span class="raridade-texto" style="color: #884dff">RARO</span><span>15%</span>
                 </div>
-                <div class="linha-raridade raridade-epico" style="--pct: 10%">
-                    <span>Épico</span><span>2 (10%)</span>
+                <div class="raridade-raro"></div>
+                <div class="linha-raridade">
+                    <span class="raridade-texto" style="color: #ea6010">LENDÁRIO</span><span>5%</span>
                 </div>
-                <div class="linha-raridade raridade-lendario" style="--pct: 5%">
-                    <span>Lendário</span><span>1 (5%)</span>
-                </div>
+                <div class="raridade-lendario"></div>
             </div>
         </section>
     </main>
