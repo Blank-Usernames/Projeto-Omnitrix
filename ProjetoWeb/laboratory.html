@@ -29,65 +29,6 @@
         </div>
     </header>
 
-    <main class="lab-container">
-        <section class="lab-title">
-            <div class="lab-title-image">
-                <img src="assets/images/icons/Ben_10_Omnitrix.png" alt="Omnitrix">
-            </div>
-            <div class="lab-title-text">
-                <h1>LABORATÓRIO</h1>
-                <p>CRIE SEUS PRÓPRIOS ALIENS E ADICIONE-OS À SUA COLEÇÃO</p>
-            </div>
-        </section>
-
-        <section class="lab-content">
-            <form id="lab-form" novalidate>
-                <h2>NOVO <span>ALIEN</span></h2>
-
-                <p id="lab-message"></p>
-
-                <label for="alien-name">Nome do Alien:</label>
-                <input type="text" name="alien-name" id="alien-name" maxlength="24" autocomplete="off">
-
-                <label for="alien-description">Descrição:</label>
-                <textarea name="alien-description" id="alien-description" rows="4" maxlength="200"></textarea>
-
-                <label for="alien-rarity">Raridade:</label>
-                <select name="alien-rarity" id="alien-rarity">
-                    <option value="comum">Comum</option>
-                    <option value="incomum">Incomum</option>
-                    <option value="raro">Raro</option>
-                    <option value="epico">Épico</option>
-                    <option value="lendario">Lendário</option>
-                </select>
-
-                <label for="alien-image">Imagem (PNG, JPG ou WEBP):</label>
-                <input type="file" name="alien-image" id="alien-image" accept="image/png, image/jpeg, image/webp">
-
-                <div class="button-forms">
-                    <button class="btn-primary" type="submit">CRIAR ALIEN</button>
-                    <button class="btn-secondary" type="reset">LIMPAR</button>
-                </div>
-            </form>
-
-            <aside class="lab-preview">
-                <h2>PRÉVIA</h2>
-                <div class="lab-preview-image" id="preview-image">
-                    <span>SEM IMAGEM</span>
-                </div>
-                <p class="lab-preview-name" id="preview-name">???</p>
-                <p>Raridade: <span id="preview-rarity" class="rarity-comum">Comum</span></p>
-                <p id="preview-description">Descrição: ???</p>
-            </aside>
-        </section>
-
-        <section class="lab-created">
-            <h2>MEUS ALIENS CRIADOS</h2>
-            <div class="lab-grid" id="created-list"></div>
-            <p class="lab-empty" id="created-empty">Você ainda não criou nenhum alien. Preencha o formulário acima.</p>
-        </section>
-    </main>
-
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
     </footer>
