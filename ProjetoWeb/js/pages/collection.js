@@ -14,6 +14,15 @@ if (!currentUser) {
 
     if (user) {
         carregarColecao(user);
+
+        // Atualizar as estastísticas do usuário
+        const statRoll = document.getElementById("stat-roll");
+        const statDiscovered = document.getElementById("stat-discovered");
+        const statCreated = document.getElementById("stat-created");
+
+        statRoll.textContent = user.stats.totalRolls;
+        statDiscovered.textContent = user.discoveredAliens.length;
+        statCreated.textContent = user.createdAliens.length;
     }
 }
 
