@@ -27,13 +27,13 @@
             <a href="register.html" data-guest-only>Cadastro</a>
         </div>
     </header>
-    
-        <button class="link-primary" id="Laboratory-create" data-auth-only>Create</button>
-        <button class="link-primary" id="Laboratory-display" data-auth-only>Display</button>
-    
-    </p>
 
-    <main>
+    <main class="layout">
+        <div class="buttons">
+            <button class="link-primary" id="Laboratory-create" data-auth-only>Create</button>
+            <button class="link-primary" id="Laboratory-display" data-auth-only>Display</button>
+        </div>
+
         <form action="" id="cadastro-alien">
             <section id="section-cadastro">
                 <div class="cadastro-container">
@@ -47,10 +47,8 @@
                         <p></p>
                         <textarea name="description" id="desc-input" cols="20" rows="5"></textarea>
                     </div>
-                    </select>
                 </div>
                 <h2>Curiosidades</h2>
-                </div>
             </section>
             <section id="section-cadastro1">
                 <div class="cadastro-container">
@@ -58,30 +56,28 @@
                         <label for="curiosidade1-input"><h3>Curiosidade: </h3></label>
                         <input type="text" name="curiosidade1" id="curiosidade1-input" required>
                     </div>
-                    <div class="cadastro-container">
-                        <div class="input-container">
-                            <label for="curiosidade2-input"><h3>Curiosidade: </h3></label>
-                            <input type="text" name="curiosidade2" id="curiosidade2-input" required>
-                        </div>
-                        <div class="cadastro-container">
-                            <div class="input-container">
-                                <label for="curiosidade3-input"><h3>Curiosidade: </h3></label>
-                                <input type="text" name="curiosidade3" id="curiosidade3-input" required>
-                            </div>
+                    <div class="input-container">
+                        <label for="curiosidade2-input"><h3>Curiosidade: </h3></label>
+                        <input type="text" name="curiosidade2" id="curiosidade2-input" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="curiosidade3-input"><h3>Curiosidade: </h3></label>
+                        <input type="text" name="curiosidade3" id="curiosidade3-input" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="imagem-input"><h3>Imagem do Alien: </h3></label>
+                        <input type="text" name="alien-image" id="alien-image-input" required>
+                    </div>
 
-                            <div class="input-container">
-                                <label for="imagem-input"><h3>Imagem do Alien: </h3></label>
-                                <input type="text" name="alien-image" id="alien-image-input" required>
-                            </div>
-
-                            <div id="cadastro-buttons">
-                                <button class="link-primary" type="submit">Criar</button>
-                                <button class="link-secondary" type="reset">Limpar</button>
-                            </div>
-                        </div>
+                    <div id="cadastro-buttons">
+                        <button class="link-primary" type="submit">Criar</button>
+                        <button class="link-secondary" type="reset">Limpar</button>
+                    </div>
+                </div>
             </section>
         </form>
     </main>
+
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
     </footer>
