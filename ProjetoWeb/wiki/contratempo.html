@@ -4,28 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrix RNG</title>
+    <title>Omnitrix RNG - contratempo</title>
     <link rel="shortcut icon" href="../assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
     <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/pages/wiki.js"></script>
 </head>
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
+        <a href="../index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
-            <a href="index.html" data-auth-only>Home</a>
-            <a href="roulette.html" data-auth-only>Roleta</a>
-            <a href="collection.html" data-auth-only>Coleção</a>
-            <a href="laboratory.html" data-auth-only>Laboratório</a>
+            <a href="../index.html" data-auth-only>Home</a>
+            <a href="../roulette.html" data-auth-only>Roleta</a>
+            <a href="../collection.html" data-auth-only>Coleção</a>
+            <a href="../laboratory.html" data-auth-only>Laboratório</a>
         </nav>
         <div class="nav-auth">
-            <a href="login.html" data-guest-only>Login</a>
-            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="../login.html" data-guest-only>Login</a>
+            <a href="../register.html" data-guest-only>Cadastro</a>
             <a href="#" id="logout-link" data-auth-only>Logout</a>
         </div>
     </header>
+
+    <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img src="../assets/images/aliens/icon_contratempo.png" alt="Contra-Tempo">
+            </div>
+            <h2 class="infobox-title">CONTRA-TEMPO</h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span>Chronosapien</span></li>
+                <li><strong>Planeta:</strong> <span>Desconhecido</span></li>
+                <li><strong>Habilidade:</strong> <span>Cronocinese</span></li>
+                <li><strong>Elemento:</strong> <span>Tempo</span></li>
+                <li><strong>Aparição:</strong> <span>Ben 10: Supremacia Alienígena</span></li>
+                <li><strong>Status:</strong> <span>Ativo (Incomum)</span></li>
+            </ul>
+        </div>
+
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="../collection.html" class="btn-back">← Voltar para a Coleção</a>
+            <h1>CONTRA-TEMPO</h1>
+            <p>"Parece que o seu tempo... acabou!"</p>
+
+            <h2>Visão Geral</h2>
+            <p>Contra-Tempo é a amostra de DNA de um Chronosapien. Ele possui um corpo mecânico e robusto semelhante a um relógio dourado antigo, com uma chave de corda no topo da cabeça e engrenagens visíveis em seu interior.</p>
+
+            <h2>Habilidades e Poderes</h2>
+            <p>Domina a cronocinese, podendo disparar raios temporais que envelhecem objetos até virarem pó ou enviam alvos para outras linhas do tempo. Também consegue desacelerar o tempo ao seu redor e projetar hologramas de eventos que aconteceram no passado.</p>
+        </div>
+    </main>
 
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>

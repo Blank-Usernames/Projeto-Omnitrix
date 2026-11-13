@@ -4,28 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrix RNG</title>
+    <title>Omnitrix RNG - fantasmatico</title>
     <link rel="shortcut icon" href="../assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
     <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/pages/wiki.js"></script>
 </head>
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
+        <a href="../index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
-            <a href="index.html" data-auth-only>Home</a>
-            <a href="roulette.html" data-auth-only>Roleta</a>
-            <a href="collection.html" data-auth-only>Coleção</a>
-            <a href="laboratory.html" data-auth-only>Laboratório</a>
+            <a href="../index.html" data-auth-only>Home</a>
+            <a href="../roulette.html" data-auth-only>Roleta</a>
+            <a href="../collection.html" data-auth-only>Coleção</a>
+            <a href="../laboratory.html" data-auth-only>Laboratório</a>
         </nav>
         <div class="nav-auth">
-            <a href="login.html" data-guest-only>Login</a>
-            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="../login.html" data-guest-only>Login</a>
+            <a href="../register.html" data-guest-only>Cadastro</a>
             <a href="#" id="logout-link" data-auth-only>Logout</a>
         </div>
     </header>
+
+    <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img src="../assets/images/aliens/icon_fantasmatico.png" alt="Fantasmático">
+            </div>
+            <h2 class="infobox-title">FANTASMÁTICO</h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span>Ectonurita</span></li>
+                <li><strong>Planeta:</strong> <span>Anur Phaetos</span></li>
+                <li><strong>Habilidade:</strong> <span>Intangibilidade e Invisibilidade</span></li>
+                <li><strong>Elemento:</strong> <span>Sombra / Ectoplasma</span></li>
+                <li><strong>Aparição:</strong> <span> Episódio 04 </span></li>
+                <li><strong>Status:</strong> <span>Ativo (Comum)</span></li>
+            </ul>
+        </div>
+
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="../collection.html" class="btn-back">← Voltar para a Coleção</a>
+            <h1>FANTASMÁTICO</h1>
+            <p>"Parece que alguém viu um fantasma..."</p>
+
+            <h2>Visão Geral</h2>
+            <p>Fantasmático é a amostra de DNA de um Ectonurita do planeta sombrio Anur Phaetos. Com uma aparência espectral e assustadora, possui um único olho roxo que percorre trilhos escuros pelo seu corpo e tentáculos ocultos sob sua pele protetora.</p>
+
+            <h2>Habilidades e Poderes</h2>
+            <p>É capaz de levitar, ficar completamente invisível e atravessar objetos sólidos através da intangibilidade. Também pode possuir o corpo de outros seres, disparar raios de energia de seu peito quando exposto e sobreviver no vácuo do espaço.</p>
+        </div>
+    </main>
 
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>

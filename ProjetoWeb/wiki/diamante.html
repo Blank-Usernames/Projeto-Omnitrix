@@ -4,28 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrix RNG</title>
+    <title>Omnitrix RNG - Diamante</title>
     <link rel="shortcut icon" href="../assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
     <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/pages/wiki.js"></script>
 </head>
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
+        <a href="../index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
-            <a href="index.html" data-auth-only>Home</a>
-            <a href="roulette.html" data-auth-only>Roleta</a>
-            <a href="collection.html" data-auth-only>Coleção</a>
-            <a href="laboratory.html" data-auth-only>Laboratório</a>
+            <a href="../index.html" data-auth-only>Home</a>
+            <a href="../roulette.html" data-auth-only>Roleta</a>
+            <a href="../collection.html" data-auth-only>Coleção</a>
+            <a href="../laboratory.html" data-auth-only>Laboratório</a>
         </nav>
         <div class="nav-auth">
-            <a href="login.html" data-guest-only>Login</a>
-            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="../login.html" data-guest-only>Login</a>
+            <a href="../register.html" data-guest-only>Cadastro</a>
             <a href="#" id="logout-link" data-auth-only>Logout</a>
         </div>
     </header>
+
+    <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img src="../assets/images/aliens/icon_diamante.png" alt="Diamante">
+            </div>
+            <h2 class="infobox-title">DIAMANTE</h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span>Petrosapien</span></li>
+                <li><strong>Planeta:</strong> <span>Petropia</span></li>
+                <li><strong>Habilidade:</strong> <span>Cristalocinese</span></li>
+                <li><strong>Elemento:</strong> <span>Cristal / Mineral</span></li>
+                <li><strong>Aparição:</strong> <span>Episódio 01 (E Então Eram 10)</span></li>
+                <li><strong>Status:</strong> <span>Ativo (Incomum)</span></li>
+            </ul>
+        </div>
+
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="../collection.html" class="btn-back">← Voltar para a Coleção</a>
+            <h1>DIAMANTE</h1>
+            <p>"Você vai quebrar antes mesmo de me arranhar!"</p>
+
+            <h2>Visão Geral</h2>
+            <p>Diamante é a amostra de DNA de um Petrosapien do planeta Petropia. Seu corpo inteiro é composto por um cristal orgânico verde-azulado extremamente resistente, tornando-o praticamente indestrutível contra impactos físicos e disparos de energia.</p>
+
+            <h2>Habilidades e Poderes</h2>
+            <p>Pode manipular a estrutura cristalina do próprio corpo para transformar seus braços em lâminas, escudos e projéteis afiados (cristalocinese). Além disso, seu corpo refrata e reflete raios laser, permitindo redirecionar ataques contra os inimigos.</p>
+        </div>
+    </main>
 
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>

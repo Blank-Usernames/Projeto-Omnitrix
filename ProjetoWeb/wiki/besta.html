@@ -4,28 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrix RNG</title>
+    <title>Omnitrix RNG - Besta</title>
     <link rel="shortcut icon" href="../assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wiki.css">
     <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/pages/wiki.js"></script>
 </head>
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
+        <a href="../index.html" class="logo"><img class="logo-icon" src="../assets/logo/Ben_10_logo.png"
                 alt="Ben 10 Logo">OMNITRIX RNG</a>
         <nav>
-            <a href="index.html" data-auth-only>Home</a>
-            <a href="roulette.html" data-auth-only>Roleta</a>
-            <a href="collection.html" data-auth-only>Coleção</a>
-            <a href="laboratory.html" data-auth-only>Laboratório</a>
+            <a href="../index.html" data-auth-only>Home</a>
+            <a href="../roulette.html" data-auth-only>Roleta</a>
+            <a href="../collection.html" data-auth-only>Coleção</a>
+            <a href="../laboratory.html" data-auth-only>Laboratório</a>
         </nav>
         <div class="nav-auth">
-            <a href="login.html" data-guest-only>Login</a>
-            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="../login.html" data-guest-only>Login</a>
+            <a href="../register.html" data-guest-only>Cadastro</a>
             <a href="#" id="logout-link" data-auth-only>Logout</a>
         </div>
     </header>
+
+    <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img src="../assets/images/aliens/icon_besta.png" alt="Besta">
+            </div>
+            <h2 class="infobox-title">BESTA</h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span>Vulpimancer</span></li>
+                <li><strong>Planeta:</strong> <span>Vulpin</span></li>
+                <li><strong>Habilidade:</strong> <span>Sentidos Aguçados e Agilidade</span></li>
+                <li><strong>Elemento:</strong> <span>Fera / Terrestre</span></li>
+                <li><strong>Aparição:</strong> <span>Episódio 01 (E Então Eram 10)</span></li>
+                <li><strong>Status:</strong> <span>Ativo (Comum)</span></li>
+            </ul>
+        </div>
+
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="../collection.html" class="btn-back">← Voltar para a Coleção</a>
+            <h1>BESTA</h1>
+            <p>"Grrrrr! *Rugidos e rosnados*"</p>
+
+            <h2>Visão Geral</h2>
+            <p>Besta é a amostra de DNA de um Vulpimancer do planeta tóxico e escuro Vulpin. Com aparência semelhante à de um grande cão alaranjado sem olhos, ele não fala a linguagem humana, comunicando-se apenas por meio de rugidos, latidos e rosnados.</p>
+
+            <h2>Habilidades e Poderes</h2>
+            <p>Compensa a falta de visão com um olfato e audição extraordinários, mapeando o ambiente através das brânquias em seu pescoço. Possui força, velocidade e agilidade sobre-humanas, além de garras e presas afiadas capazes de rasgar metal.</p>
+        </div>
+    </main>
 
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
