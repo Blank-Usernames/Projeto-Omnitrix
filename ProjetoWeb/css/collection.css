@@ -229,6 +229,11 @@
 
 .stat-num {
     color: var(--primary-dark);
+    font-size: 20x;
+}
+
+.stat-num:hover {
+    color: var(--primary);
 }
 
 /* CHAMADA PARA LABORATÓRIO */
