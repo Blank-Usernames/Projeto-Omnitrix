@@ -9,8 +9,8 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     // Capturar informações
-    const username = document.getElementById("user-login").value;
-    const password = document.getElementById("passwd-login").value;
+    const username = document.getElementById("user-login").value.trim();
+    const password = document.getElementById("passwd-login").value.trim();
 
     // Executar login
     const resultado = login(username, password);

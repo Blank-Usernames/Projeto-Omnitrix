@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omnitrix RNG</title>
+    <title>Omnitrix RNG - Wiki</title>
     <link rel="shortcut icon" href="assets/logo/Ben_10_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/wiki.css" />
+    <link rel="stylesheet" href="css/wiki.css">
     <script type="module" src="js/app.js"></script>
-    <script type="module" src="js/pages/wiki.js"></script>
+    <script type="module" src="js/pages/wiki-personal.js"></script>
 </head>
 
 <body>
@@ -30,56 +30,34 @@
     </header>
 
     <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img id="alien-image" src="" alt="">
+            </div>
+            <h2 class="infobox-title" id="alien-info-name"></h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span id="alien-species"></span></li>
+                <li><strong>Planeta:</strong> <span id="alien-planet"></span></li>
+                <li><strong>Habilidade:</strong> <span id="alien-hability"></span></li>
+                <li><strong>Elemento:</strong> <span id="alien-element"></span></li>
+                <li><strong>Tipo:</strong> <span id="alien-type"></span></li>
+            </ul>
+        </div>
 
-  <!-- Caixa da Esquerda -->
-  <div class="infobox">
-    <div class="infobox-image">
-      <img src="imagem.png" alt="Imagem do Alien">
-    </div>
-    <h2 class="infobox-title">NOME DO ALIEN</h2>
-    <ul class="infobox-details">
-      <li><strong>Espécie:</strong> <span>Desconhecida</span></li>
-      <li><strong>Planeta:</strong> <span>Desconhecido</span></li>
-      <li><strong>Habilidade:</strong> <span>Super Força</span></li>
-      <li><strong>Elemento:</strong> <span>Fogo</span></li>
-      <li><strong>Aparição:</strong> <span>Episódio 01</span></li>
-      <li><strong>Status:</strong> <span>Ativo</span></li>
-    </ul>
-  </div>
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="laboratory.html" class="btn-back">← Voltar para o Laboratório</a>
+            <h1 id="alien-name"></h1>
+            <p id="alien-phrase"></p>
 
-  <!-- Caixa da Direita -->
-  <div class="wiki-content">
-    <h1>NOME DO ALIEN</h1>
-    <blockquote class="intro-quote">
-      "Descrição curta ou citação marcante sobre o alienígena selecionado."
-    </blockquote>
-    <h2>Visão Geral</h2>
-    <p>Escreva aqui a história e os detalhes do alienígena.</p>
-    <h2>Habilidades e Poderes</h2>
-    <p>Liste as principais capacidades físicas e especiais.</p>
-  </div>
+            <h2>Visão Geral</h2>
+            <p id="alien-description"></p>
 
-</main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <h2>Habilidades e Poderes</h2>
+            <p id="alien-powers"></p>
+        </div>
+    </main>
 
     <footer>
         <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
