@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnitrix RNG - Wiki</title>
+    <link rel="shortcut icon" href="assets/logo/Ben_10_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/wiki-personal.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo"><img class="logo-icon" src="assets/logo/Ben_10_logo.png"
+                alt="Ben 10 Logo">OMNITRIX RNG</a>
+        <nav>
+            <a href="index.html" data-auth-only>Home</a>
+            <a href="roulette.html" data-auth-only>Roleta</a>
+            <a href="collection.html" data-auth-only>Coleção</a>
+            <a href="laboratory.html" data-auth-only>Laboratório</a>
+        </nav>
+        <div class="nav-auth">
+            <a href="login.html" data-guest-only>Login</a>
+            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="#" id="logout-link" data-auth-only>Logout</a>
+        </div>
+    </header>
+
+    <main class="wiki-container">
+        <!-- Caixa da Esquerda -->
+        <div class="infobox">
+            <div class="infobox-image">
+                <img id="alien-image" src="" alt="">
+            </div>
+            <h2 class="infobox-title" id="alien-info-name"></h2>
+            <ul class="infobox-details">
+                <li><strong>Espécie:</strong> <span id="alien-species"></span></li>
+                <li><strong>Planeta:</strong> <span id="alien-planet"></span></li>
+                <li><strong>Habilidade:</strong> <span id="alien-hability"></span></li>
+                <li><strong>Elemento:</strong> <span id="alien-element"></span></li>
+                <li><strong>Tipo:</strong> <span id="alien-type"></span></li>
+            </ul>
+        </div>
+
+        <!-- Caixa da Direita -->
+        <div class="wiki-content">
+            <a href="laboratory.html" class="btn-back">← Voltar para o Laboratório</a>
+            <h1 id="alien-name"></h1>
+            <p id="alien-phrase"></p>
+
+            <h2>Visão Geral</h2>
+            <p id="alien-description"></p>
+
+            <h2>Habilidades e Poderes</h2>
+            <p id="alien-powers"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
+    </footer>
+</body>
+
+</html>

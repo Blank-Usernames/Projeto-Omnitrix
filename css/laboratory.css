@@ -1,0 +1,463 @@
+/* LABORATORY */
+
+.lab-container {
+    padding: 40px 8%;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+/* TÍTULO */
+.lab-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+
+.lab-title-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.lab-title-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.lab-title-text h1 {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+.lab-title-text p {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#lab-form h2,
+#cards-container h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+#lab-form h2 span,
+#cards-container h2 span {
+    color: var(--primary);
+}
+
+/* SELEÇÃO DE MODO */
+.lab-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+#create-section[hidden],
+#aliens-section[hidden] {
+    display: none !important;
+}
+
+.lab-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 190px;
+    padding: 15px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* CONTAINER PRINCIPAL */
+.lab-workspace {
+    flex: 1;
+    min-width: 0;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* CADASTRO DE ALIEN */
+#create-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#lab-form,
+#cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#lab-form h2,
+.lab-preview h2,
+.lab-created h2,
+#cards-container h2 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+}
+
+#lab-form label {
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+#lab-form input[type="text"],
+#lab-form textarea,
+#lab-form select {
+    background: var(--surface-light);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    padding: 0 14px;
+    transition: 0.3s;
+}
+
+#lab-form input[type="text"],
+#lab-form select {
+    height: 45px;
+}
+
+#lab-form textarea {
+    padding: 12px 14px;
+    resize: vertical;
+    min-height: 90px;
+}
+
+#lab-form input:focus,
+#lab-form textarea:focus,
+#lab-form select:focus {
+    border-color: var(--text);
+}
+
+#lab-message {
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    min-height: 16px;
+}
+
+.button-forms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* PRÉVIA */
+.lab-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 260px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px 14px;
+}
+
+.lab-preview h2 {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.lab-preview-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.lab-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lab-preview p {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.lab-preview .lab-preview-name {
+    color: var(--primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.preview-text {
+    color: var(--r-comum);
+    font-weight: bold;
+}
+
+/* ALIENS CRIADOS */
+#aliens-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    width: 100%;
+    gap: 12px;
+}
+
+.lab-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #08130a;
+    border: 1px solid var(--primary-dark);
+    border-radius: 8px;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+.lab-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #17d637;
+}
+
+.lab-card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    height: 130px;
+}
+
+.lab-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lab-card h3 {
+    color: var(--text);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.lab-card p {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.lab-card .lab-delete,
+.lab-wiki {
+    align-self: flex-start;
+    height: 32px;
+    width: auto;
+    padding: 0 14px;
+    margin-top: auto;
+    font-size: 10px;
+}
+
+.lab-card .lab-delete:hover {
+    border-color: #ff5c5c;
+    color: #ff5c5c;
+}
+
+.lab-card-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.lab-card-buttons button {
+    flex: 1;
+}
+
+.lab-empty {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.lab-empty[hidden] {
+    display: none;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+
+    .lab-container {
+        padding: 25px 5%;
+    }
+
+    .lab-title {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .lab-title-image {
+        width: 45px;
+        height: 45px;
+    }
+
+    .lab-title-text h1 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .lab-title-text p {
+        font-size: 10px;
+    }
+
+    .lab-content {
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .lab-sidebar {
+        flex-direction: row;
+        width: 100%;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .lab-sidebar button {
+        flex: 1;
+        font-size: 12px;
+        padding: 14px 8px;
+        min-height: 45px;
+    }
+
+    .lab-workspace {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #create-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #lab-form,
+    #cards-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #lab-form h2,
+    #cards-container h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    #lab-form label {
+        font-size: 13px;
+    }
+
+    #lab-form input[type="text"],
+    #lab-form textarea,
+    #lab-form select {
+        font-size: 13px;
+    }
+
+    .button-forms {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-forms button {
+        width: 100%;
+        min-height: 45px;
+        font-size: 13px;
+    }
+
+    .lab-preview {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .lab-preview-image {
+        height: 160px;
+    }
+
+    #aliens-section {
+        width: 100%;
+    }
+
+    .lab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .lab-card {
+        padding: 10px;
+    }
+
+    .lab-card-image {
+        height: 110px;
+    }
+
+    .lab-card h3 {
+        font-size: 11px;
+    }
+
+    .lab-card p {
+        font-size: 10px;
+    }
+
+    .lab-card-buttons {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .lab-card-buttons button,
+    .lab-card .lab-delete,
+    .lab-wiki {
+        width: 100%;
+        min-height: 40px;
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .lab-empty {
+        font-size: 11px;
+    }
+}

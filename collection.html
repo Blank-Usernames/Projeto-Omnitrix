@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnitrix RNG - Coleção</title>
+    <link rel="shortcut icon" href="assets/logo/Ben_10_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collection.css" />
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/collection.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo"><img class="logo-icon" src="assets/logo/Ben_10_logo.png"
+                alt="Ben 10 Logo">OMNITRIX RNG</a>
+        <nav>
+            <a href="index.html" data-auth-only>Home</a>
+            <a href="roulette.html" data-auth-only>Roleta</a>
+            <a href="collection.html" data-auth-only>Coleção</a>
+            <a href="laboratory.html" data-auth-only>Laboratório</a>
+        </nav>
+        <div class="nav-auth">
+            <a href="login.html" data-guest-only>Login</a>
+            <a href="register.html" data-guest-only>Cadastro</a>
+            <a href="#" id="logout-link" data-auth-only>Logout</a>
+        </div>
+    </header>
+
+    <main class="collection-container">
+        <section class="title">
+            <div class="title-image">
+                <img src="assets/images/icons/Ben_10_Omnitrix.png" alt="Omnitrix">
+            </div>
+            <div class="title-text">          
+                <h1>MINHA COLEÇÃO</h1>
+                <p>CONHEÇA OS ALIENS JÁ ENCONTRADOS E QUAIS AINDA FALTAM DESCOBRIR</p>
+            </div>
+        </section>
+
+        <section class="collection-content">
+            <div class="card-container">
+                <div class="alien-card locked" data-alien="chama"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="fantasmatico"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="besta"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="diamante"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="contratempo"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="benbugado"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="bensupremo"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+                <div class="alien-card locked" data-alien="alienx"><img src="assets/images/icons/Ben_10_Blocked.png" alt="Personagem Bloqueado"></div>
+            </div>
+
+            <div class="info-container">
+                <div class="info-image-container">
+                    <img id="info-image" src="" alt="">
+                </div>
+                <h2 id="info-name"><span>Selecione</span> um Alien</h2>
+                <p>Raridade: <span id="info-rarity">???</span></p>
+                <p>Quantidade: <span id="qtd-alien">???</span></p>
+                <a class="link-secondary" id="wiki-link" href="">WIKI</a>
+            </div>
+        </section>
+
+        <section class="player-info">
+            <div class="player-stats">
+                <h2>ESTATÍSTICAS</h2>
+                <div class="stats-container">
+                    <div class="stat">
+                        <p class="stat-num" id="stat-roll"></p><p>Quantidade de Giros</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-num" id="stat-discovered"></p><p>Aliens Descobertos</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-num" id="stat-created"></p><p>Aliens Criados</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-laboratory">
+                <p>COMPLETOU SEU OMNITRIX? ENTÃO EXPERIMENTE O LABORATÓRIO</p>
+                <h2>CRIE SEUS PRÓPRIOS <span>ALIENS</span></h2>
+                <a class="link-primary" href="laboratory.html">ACESSAR LABORATÓRIO →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>OMNITRIX RNG © 2026 — PROJETO PROGRAMAÇÃO WEB</p>
+    </footer>
+</body>
+
+</html>
