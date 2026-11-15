@@ -7,7 +7,6 @@ const currentUser = getCurrentUser();
 if (!currentUser) {
     window.location.href = "../login.html";
 } else {
-
     const users = getData("omnitrix_users") || [];
 
     const user = users.find(user => user.id === currentUser.id);
@@ -25,17 +24,4 @@ if (!currentUser) {
     if (!verificarAlien) {
         window.location.href = "../roulette.html";
     }
-}
-
-/* WIKI PERSONALIZADA */
-const user = users.find(user => user.id === currentUser.id);
-
-// Recuperar ID selecionado
-const alienId = Number(localStorage.getItem("selectedAlienId"));
-
-// Procurar alien cadastrado
-const alien = user.createdAliens.find(alien => alien.id === alienId);
-
-if (!alien) {
-    window.location.href = "laboratory.html";
 }

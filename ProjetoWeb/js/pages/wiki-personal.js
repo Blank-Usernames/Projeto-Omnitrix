@@ -49,10 +49,8 @@ alienPhrase.textContent = alien.phrase;
 alienDescription.textContent = alien.description;
 alienPowers.textContent = alien.powers;
 
-// Remover LocalStorage
-const button = document.querySelector(".btn-back");
-
-button.addEventListener("click", () => {
+// Remover ID ao sair da página
+window.addEventListener("beforeunload", () => {
     removeData("selectedAlienId");
 });
 
