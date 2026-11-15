@@ -285,7 +285,8 @@
     overflow-wrap: anywhere;
 }
 
-.lab-card .lab-delete, .lab-wiki {
+.lab-card .lab-delete,
+.lab-wiki {
     align-self: flex-start;
     height: 32px;
     width: auto;
@@ -321,6 +322,7 @@
 
 /* RESPONSIVIDADE */
 @media (max-width: 600px) {
+
     .lab-container {
         padding: 25px 5%;
     }
@@ -344,31 +346,56 @@
         font-size: 10px;
     }
 
+    .lab-content {
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
     .lab-sidebar {
+        flex-direction: row;
+        width: 100%;
         padding: 10px;
         gap: 8px;
     }
 
     .lab-sidebar button {
-        font-size: 9px;
-        padding: 12px 5px;
+        flex: 1;
+        font-size: 12px;
+        padding: 14px 8px;
+        min-height: 45px;
     }
 
     .lab-workspace {
+        width: 100%;
         padding: 10px;
     }
 
     #create-section {
         flex-direction: column;
+        gap: 15px;
     }
 
     #lab-form,
-    .lab-preview {
+    #cards-container {
         width: 100%;
+        padding: 20px;
     }
 
-    #lab-form {
-        padding: 20px;
+    #lab-form h2,
+    #cards-container h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    #lab-form label {
+        font-size: 13px;
+    }
+
+    #lab-form input[type="text"],
+    #lab-form textarea,
+    #lab-form select {
+        font-size: 13px;
     }
 
     .button-forms {
@@ -378,32 +405,59 @@
 
     .button-forms button {
         width: 100%;
+        min-height: 45px;
+        font-size: 13px;
     }
 
-    .lab-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    }
-
-    .lab-sidebar {
-        padding: 10px;
-        gap: 8px;
-    }
-
-    .lab-sidebar button {
-        font-size: 9px;
-        padding: 12px 5px;
-    }
-
-    #create-section {
-        flex-direction: column;
-    }
-
-    #lab-form,
     .lab-preview {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .lab-preview-image {
+        height: 160px;
+    }
+
+    #aliens-section {
         width: 100%;
     }
 
     .lab-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .lab-card {
+        padding: 10px;
+    }
+
+    .lab-card-image {
+        height: 110px;
+    }
+
+    .lab-card h3 {
+        font-size: 11px;
+    }
+
+    .lab-card p {
+        font-size: 10px;
+    }
+
+    .lab-card-buttons {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .lab-card-buttons button,
+    .lab-card .lab-delete,
+    .lab-wiki {
+        width: 100%;
+        min-height: 40px;
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .lab-empty {
+        font-size: 11px;
     }
 }
