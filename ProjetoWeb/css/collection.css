@@ -3,6 +3,7 @@
 .collection-container {
     padding: 40px 8%;
     max-width: 100%;
+    min-height: 100vh;
 }
 
 /* TÍTULO */

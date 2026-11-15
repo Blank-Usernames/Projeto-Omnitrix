@@ -3,12 +3,7 @@
 .lab-container {
     padding: 40px 8%;
     max-width: 100%;
-    /* cores de raridade (usam as variáveis globais, se existirem) */
-    --r-comum: var(--cor-comum, #9aa5a0);
-    --r-incomum: var(--cor-incomum, #39d353);
-    --r-raro: var(--cor-raro, #4da6ff);
-    --r-epico: var(--cor-epico, #c77dff);
-    --r-lendario: var(--cor-lendario, #ffb830);
+    min-height: 100vh;
 }
 
 /* TÍTULO */
@@ -47,19 +42,60 @@
     font-weight: 500;
 }
 
-/* FORMULÁRIO + PRÉVIA */
+#lab-form h2,
+#cards-container h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+#lab-form h2 span,
+#cards-container h2 span {
+    color: var(--primary);
+}
+
+/* SELEÇÃO DE MODO */
 .lab-content {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background: var(--surface-light);
-    border: 1px solid #acabab;
-    border-radius: 10px;
-    padding: 15px;
     margin: 30px 0;
 }
 
-#lab-form {
+#create-section[hidden],
+#aliens-section[hidden] {
+    display: none !important;
+}
+
+.lab-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 190px;
+    padding: 15px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* CONTAINER PRINCIPAL */
+.lab-workspace {
+    flex: 1;
+    min-width: 0;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+/* CADASTRO DE ALIEN */
+#create-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#lab-form,
+#cards-container {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -73,18 +109,10 @@
 
 #lab-form h2,
 .lab-preview h2,
-.lab-created h2 {
+.lab-created h2,
+#cards-container h2 {
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 4px;
-}
-
-#lab-form h2 {
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-#lab-form h2 span {
-    color: var(--primary);
 }
 
 #lab-form label {
@@ -95,8 +123,7 @@
 
 #lab-form input[type="text"],
 #lab-form textarea,
-#lab-form select,
-#lab-form input[type="file"] {
+#lab-form select {
     background: var(--surface-light);
     color: var(--text);
     border: 1px solid var(--border);
@@ -120,30 +147,6 @@
     min-height: 90px;
 }
 
-#lab-form input[type="file"] {
-    height: auto;
-    padding: 10px 14px;
-    cursor: pointer;
-}
-
-#lab-form input[type="file"]::file-selector-button {
-    background: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-    padding: 8px 14px;
-    margin-right: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#lab-form input[type="file"]::file-selector-button:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
 #lab-form input:focus,
 #lab-form textarea:focus,
 #lab-form select:focus {
@@ -151,25 +154,17 @@
 }
 
 #lab-message {
+    margin: 5px 0;
     font-size: 13px;
     font-weight: 500;
     text-align: left;
     min-height: 16px;
 }
 
-#lab-message.success {
-    color: var(--primary);
-}
-
-#lab-message.error {
-    color: #ff5c5c;
-}
-
 .button-forms {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 12px;
 }
 
 /* PRÉVIA */
@@ -211,12 +206,6 @@
     object-fit: contain;
 }
 
-.lab-preview-image span {
-    color: var(--text-muted);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-}
-
 .lab-preview p {
     color: var(--text-muted);
     font-size: 12px;
@@ -231,24 +220,21 @@
     letter-spacing: 3px;
 }
 
-/* cores de raridade */
-.rarity-comum { color: var(--r-comum); font-weight: bold; }
-.rarity-incomum { color: var(--r-incomum); font-weight: bold; }
-.rarity-raro { color: var(--r-raro); font-weight: bold; }
-.rarity-epico { color: var(--r-epico); font-weight: bold; }
-.rarity-lendario { color: var(--r-lendario); font-weight: bold; }
+.preview-text {
+    color: var(--r-comum);
+    font-weight: bold;
+}
 
 /* ALIENS CRIADOS */
-.lab-created h2 {
-    color: var(--primary);
-    font-size: 17px;
-    font-weight: lighter;
-    margin-bottom: 15px;
+#aliens-section {
+    width: 100%;
+    min-width: 0;
 }
 
 .lab-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    width: 100%;
     gap: 12px;
 }
 
@@ -299,7 +285,7 @@
     overflow-wrap: anywhere;
 }
 
-.lab-card .lab-delete {
+.lab-card .lab-delete, .lab-wiki {
     align-self: flex-start;
     height: 32px;
     width: auto;
@@ -313,6 +299,17 @@
     color: #ff5c5c;
 }
 
+.lab-card-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.lab-card-buttons button {
+    flex: 1;
+}
+
 .lab-empty {
     color: var(--text-muted);
     font-size: 13px;
@@ -323,17 +320,6 @@
 }
 
 /* RESPONSIVIDADE */
-@media (max-width: 800px) {
-    .lab-content {
-        flex-direction: column;
-    }
-
-    #lab-form,
-    .lab-preview {
-        width: 100%;
-    }
-}
-
 @media (max-width: 600px) {
     .lab-container {
         padding: 25px 5%;
@@ -358,8 +344,27 @@
         font-size: 10px;
     }
 
-    .lab-content {
+    .lab-sidebar {
         padding: 10px;
+        gap: 8px;
+    }
+
+    .lab-sidebar button {
+        font-size: 9px;
+        padding: 12px 5px;
+    }
+
+    .lab-workspace {
+        padding: 10px;
+    }
+
+    #create-section {
+        flex-direction: column;
+    }
+
+    #lab-form,
+    .lab-preview {
+        width: 100%;
     }
 
     #lab-form {
@@ -373,5 +378,32 @@
 
     .button-forms button {
         width: 100%;
+    }
+
+    .lab-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+
+    .lab-sidebar {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .lab-sidebar button {
+        font-size: 9px;
+        padding: 12px 5px;
+    }
+
+    #create-section {
+        flex-direction: column;
+    }
+
+    #lab-form,
+    .lab-preview {
+        width: 100%;
+    }
+
+    .lab-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     }
 }

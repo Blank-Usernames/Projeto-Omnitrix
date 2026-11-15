@@ -23,7 +23,7 @@ export function cadastro(username, email, password, confirmPassword) {
     }
 
     // Verificar campos vazios
-    if (!username || !email || !password || !confirmPassword) {
+    if (!username|| !email || !password|| !confirmPassword) {
         return {
             success: false,
             message: "Preencha todos os campos."

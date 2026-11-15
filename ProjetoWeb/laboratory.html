@@ -41,50 +41,88 @@
         </section>
 
         <section class="lab-content">
-            <form id="lab-form" novalidate>
-                <h2>NOVO <span>ALIEN</span></h2>
+            <aside class="lab-sidebar">
+                <button id="btn-create" class="btn-primary">
+                    Criar Alien
+                </button>
 
-                <p id="lab-message"></p>
-
-                <label for="alien-name">Nome do Alien:</label>
-                <input type="text" name="alien-name" id="alien-name" maxlength="24" autocomplete="off">
-
-                <label for="alien-description">Descrição:</label>
-                <textarea name="alien-description" id="alien-description" rows="4" maxlength="200"></textarea>
-
-                <label for="alien-rarity">Raridade:</label>
-                <select name="alien-rarity" id="alien-rarity">
-                    <option value="comum">Comum</option>
-                    <option value="incomum">Incomum</option>
-                    <option value="raro">Raro</option>
-                    <option value="epico">Épico</option>
-                    <option value="lendario">Lendário</option>
-                </select>
-
-                <label for="alien-image">Imagem (PNG, JPG ou WEBP):</label>
-                <input type="file" name="alien-image" id="alien-image" accept="image/png, image/jpeg, image/webp">
-
-                <div class="button-forms">
-                    <button class="btn-primary" type="submit">CRIAR ALIEN</button>
-                    <button class="btn-secondary" type="reset">LIMPAR</button>
-                </div>
-            </form>
-
-            <aside class="lab-preview">
-                <h2>PRÉVIA</h2>
-                <div class="lab-preview-image" id="preview-image">
-                    <span>SEM IMAGEM</span>
-                </div>
-                <p class="lab-preview-name" id="preview-name">???</p>
-                <p>Raridade: <span id="preview-rarity" class="rarity-comum">Comum</span></p>
-                <p id="preview-description">Descrição: ???</p>
+                <button id="btn-aliens" class="btn-secondary">
+                    Meus Aliens
+                </button>
             </aside>
-        </section>
 
-        <section class="lab-created">
-            <h2>MEUS ALIENS CRIADOS</h2>
-            <div class="lab-grid" id="created-list"></div>
-            <p class="lab-empty" id="created-empty">Você ainda não criou nenhum alien. Preencha o formulário acima.</p>
+            <div class="lab-workspace">
+                <section id="create-section">
+                    <form id="lab-form" novalidate>
+                        <h2>NOVO <span>ALIEN</span></h2>
+
+                        <label for="alien-name">Nome:</label>
+                        <input type="text" name="alien-name" id="alien-name" maxlength="24" autocomplete="off">
+
+                        <label for="alien-species">Espécie:</label>
+                        <input type="text" name="alien-species" id="alien-species" maxlength="24" autocomplete="off">
+
+                        <label for="alien-planet">Planeta:</label>
+                        <input type="text" name="alien-planet" id="alien-planet" maxlength="24" autocomplete="off">
+
+                        <label for="alien-hability">Habilidade:</label>
+                        <input type="text" name="alien-hability" id="alien-hability" maxlength="24" autocomplete="off">
+
+                        <label for="alien-element">Elemento:</label>
+                        <input type="text" name="alien-element" id="alien-element" maxlength="24" autocomplete="off">
+
+                        <label for="phrase-effect">Frase de Efeito:</label>
+                        <input type="text" name="phrase-effect" id="phrase-effect" maxlength="100" autocomplete="off">
+
+                        <label for="alien-description">Descrição Geral:</label>
+                        <textarea name="alien-description" id="alien-description" rows="4" maxlength="400"></textarea>
+
+                        <label for="power-description">Descrição dos Poderes:</label>
+                        <textarea name="power-description" id="power-description" rows="4" maxlength="400"></textarea>
+
+                        <label for="alien-type">Tipo:</label>
+                        <select name="alien-type" id="alien-type">
+                            <option value="Alien">Alien</option>
+                            <option value="Humano">Humano</option>
+                            <option value="Híbrido">Híbrido</option>
+                            <option value="Desconhecido">Desconhecido</option>
+                        </select>
+
+                        <label for="alien-image">Imagem:</label>
+                        <input type="text" name="alien-image" id="alien-image" autocomplete="off">
+
+                        <p id="lab-message"></p>
+
+                        <div class="button-forms">
+                            <button class="btn-primary" type="submit">CRIAR ALIEN</button>
+                            <button class="btn-secondary" type="reset">LIMPAR</button>
+                        </div>
+                    </form>
+
+                    <aside class="lab-preview">
+                        <h2>PRÉVIA</h2>
+                        <div class="lab-preview-image" id="preview-image">
+                            <img src="assets/images/icons/Ben_10_Blocked.png" alt="">
+                        </div>
+                        <p class="lab-preview-name" id="preview-name">???</p>
+                        <p>Espécie: <span id="preview-species" class="preview-text">???</span></p>
+                        <p>Planeta: <span id="preview-planet" class="preview-text">???</span></p>
+                        <p>Habilidade: <span id="preview-hability" class="preview-text">???</span></p>
+                        <p>Elemento: <span id="preview-element" class="preview-text">???</span></p>
+                    </aside>
+                </section>
+
+                <section id="aliens-section" hidden>
+                    <div id="cards-container">
+                        <h2><span>MEUS</span> ALIENS</h2>
+                        <div class="my-aliens-container lab-grid">
+                            <p class="lab-empty" id="lab-empty">
+                                Você ainda não criou nenhum alien.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </section>
     </main>
 
